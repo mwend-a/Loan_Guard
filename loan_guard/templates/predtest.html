@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Status Prediction</title>
+</head>
+<body>
+    <h1>Loan Status Prediction</h1>
+    <form id="loanForm">
+        <label for="loan_id">Enter Loan ID:</label>
+        <input type="text" id="loan_id" name="loan_id"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="prediction"></div>
+
+    <script>
+        // JavaScript code to handle form submission and prediction display
+        document.getElementById('loanForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get the loan_id from the form
+    var loanId = document.getElementById('loan_id').value;
+
+    // Send a POST request to the Flask server
+    fetch('/predict_loan_status', {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'loan_id=' + encodeURIComponent(loanId) // Encode loan_id for URL
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Display the prediction in the 'prediction' div
+        document.getElementById('prediction').innerHTML = data.prediction || data.error;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+    </script>
+</body>
+</html>
