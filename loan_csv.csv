@@ -1,0 +1,5 @@
+loan_id,no_of_dependents,education,self_employed,income_annum,loan_amount,loan_term,credit_score,residential_assets_value,commercial_assets_value,luxury_assets_value,bank_asset_value,loan_status
+1,1,Not Graduate,yes,152312,76756,6,45335,908333,76565,650000,43442,
+2,1,Graduate,no,152312,76756,6,45335,908333,76565,650000,43442,
+,,Graduate,yes,,,,,,,,,
+5,2,Graduate,no,9600000,29900000,12,778,2400000,17600000,22700000,8000000,

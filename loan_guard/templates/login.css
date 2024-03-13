@@ -1,0 +1,30 @@
+/* Select the button element */
+button {
+    /* Change the background color */
+    background-color: #4CAF50;
+    /* Change the text color */
+    color: white;
+    /* Change the font family */
+    font-family: Arial, sans-serif;
+    /* Change the font size */
+    font-size: 16px;
+    /* Add padding to the button */
+    padding: 10px 20px;
+    /* Add border radius to make it rounded */
+    border-radius: 5px;
+    /* Add a hover effect */
+    transition: background-color 0.3s;
+  }
+  
+  /* Add a hover effect */
+  button:hover {
+    background-color: #45a049;
+  }
+/* styles.css */
+
+body {
+    background-image: url('C:\Users\Top g\Downloads\Banks Companies in India.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
