@@ -1,0 +1,22 @@
+/* styles.css */
+
+button {
+    background-color: #3498db; /* Light blue color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding around text */
+    border: none; /* Remove border */
+    cursor: pointer; /* Cursor style */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 10px; /* Space between buttons */
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue color on hover */
+}
+
+body {
+    background-image: url('D:\Machine learning\Loan_Guard\loan_guard\static\images\Loanguardpic.png');
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Fixed position */
+}

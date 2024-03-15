@@ -6,7 +6,7 @@ import csv
 #from loan_guard import check_loan_status, x_test, y_pred
 
 
-app = Flask (__name__)
+app = Flask (__name__, static_url_path='/static')
 
 
 # Load model
@@ -78,6 +78,7 @@ def home():
             'luxury_assets_value': request.form.get('luxury_assets_value'),
             'bank_asset_value': request.form.get('bank_asset_value'),
             'loan_status': request.form.get('loan_status'),
+            
         }
 
         with open('loan_csv.csv', mode='a', newline='') as file:
