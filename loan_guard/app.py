@@ -17,6 +17,7 @@ with open('classifier.pkl', 'rb') as f:
 
 # Defining attributes
 df = pd.read_csv('loan_app_dataset.csv')
+new_user_df = pd.read_csv('loan_csv.csv')
 
 
 # Define a function to check loan status
@@ -36,17 +37,33 @@ def check_loan_status(df, x_test, y_pred, user_loan_id):
 
 @app.route('/pred', methods=['GET','POST'])
 def pred():
-      
-      if request.method == 'POST':
+     loan_status= ''
+     if request.method == 'POST':
+        loan_id = request.form['loan_id']
+        print(f"Received loan_id: {loan_id}")
+
+        loan_row = new_user_df[new_user_df['loan_id'] == int(loan_id)]
+        if loan_row.empty:
+            loan_status = 'Loan ID not found'
+        else:
+            loan_status = loan_row['loan_status'].iloc[0]
+            loan_status_mapping = {1: 'Approved', 0: 'Rejected'}
+            loan_status = loan_status_mapping.get(loan_status, 'Unknown')
+            print(f"Received loan_status: {loan_status}")
+   
+        # Handle GET request (if needed)
+     return render_template('pred.html', result=f"The Loan ID was:{loan_status}")
+  
+      #if request.method == 'POST':
         # Get user Inputs
-        user_loan_id = request.form['loan_id'].strip()
-        x_test = pd.DataFrame(df)
-        y_pred = classifier.predict(x_test)
-        result = check_loan_status(df,df, y_pred, user_loan_id)
-        return render_template('pred.html', result=result)
-      else:
+        #user_loan_id = request.form['loan_id'].strip()
+        #x_test = pd.DataFrame(df)
+        #y_pred = classifier.predict(x_test)
+        #result = check_loan_status(df,df, y_pred, user_loan_id)
+        #return render_template('pred.html', result=result)
+      #else:
         # Handle GET request (e.g., render a form)
-        return render_template('pred.html')
+        #return render_template('pred.html')
     
 @app.route('/')
 def login():

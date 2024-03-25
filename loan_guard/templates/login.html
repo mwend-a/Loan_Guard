@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HOME PAGE</title>
-    <link rel="stylesheet" type="text/css" href='D:\Machine learning\Loan_Guard\loan_guard\static\styling\login.css'>
+    <title>LOAN GUARD</title>
+    <style>
+          body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #2980b9, #6dd5fa, #ffffff); /* Gradient background with blue tones */
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrollbars */
+        }
 
-     
+        h1 {
+            font-size: 48px;
+            margin-top: 100px;
+            color: #fff; /* White text color */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Text shadow for better readability */
+            transition: transform 0.3s; /* Add transition for smooth scale animation */
+        }
+
+        button {
+            background-color: #3498db; /* Blue button background */
+            color: #fff; /* White text color */
+            padding: 20px 40px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 20px;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Button shadow */
+            transition: transform 0.3s; /* Add transition for smooth scale animation */
+        }
+
+        button:hover {
+            transform: scale(1.1); /* Scale up the button on hover */
+        }
+    </style>
+    
+
 </head>
 <body>
-    <h1>Home Page</h1>
+    <h1>LOAN GUARD</h1>
     <button onclick="window.location.href='home'">Home Page</button>
     <button onclick="window.location.href='pred'">Prediction Page</button>
 </body>

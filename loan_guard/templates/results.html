@@ -1,9 +1,44 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Loan Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 50px;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        .approved {
+            color: #008000; /* Green color for approved */
+        }
+
+        .rejected {
+            color: #ff0000; /* Red color for rejected */
+        }
+    </style>
 </head>
 <body>
     <h1>Loan Prediction Result</h1>
-    <p>The prediction is: {{ result }}</p>
+    {% if result == 'Approved' %}
+        <p class="approved">The loan is approved!</p>
+    {% elif result == 'Rejected' %}
+        <p class="rejected">The loan is rejected.</p>
+    {% else %}
+        <p>Invalid prediction.</p>
+    {% endif %}
 </body>
 </html>

@@ -15,7 +15,7 @@ button:hover {
 }
 
 body {
-    background-image: url('D:\Machine learning\Loan_Guard\loan_guard\static\images\Loanguardpic.png');
+    background-image: url('D:/Machine learning/Loan_Guard/loan_guard/static/images/Loanguardpic.png');
     background-size: cover; /* Cover the entire background */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-attachment: fixed; /* Fixed position */
